@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "./src/Cpnucleo.RazorPages"
+        working-directory: "./src/Cpnucleo.Blazor"
 
     steps:
     - uses: actions/checkout@main
