@@ -27,6 +27,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore        
 
+    - name: Install Wasm-Tools workload
+      run: dotnet workload install wasm-tools
+
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v0
       with:
