@@ -14,9 +14,9 @@ WORKDIR /src
 
 COPY ["src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj", "src/Cpnucleo.Blazor/"]
 
-RUN dotnet restore "src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj"
-
 RUN dotnet workload install wasm-tools
+
+RUN dotnet restore "src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj"
 
 COPY . .
 
