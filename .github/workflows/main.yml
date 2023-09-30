@@ -44,9 +44,6 @@ jobs:
     - name: Build project
       run: dotnet build --configuration Release --no-restore /p:Version=${{ env.GitVersion_SemVer }} /p:SourceLinkCreate=true /p:PublicRelease=true
 
-    - name: Publish project
-      run: dotnet publish --configuration Release /p:UseAppHost=false
-
   build-push-image:
     needs: setup-build-test
     runs-on: ubuntu-latest
