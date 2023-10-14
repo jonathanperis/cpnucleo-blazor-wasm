@@ -45,7 +45,7 @@ jobs:
       run: dotnet build -c Release --no-restore /p:Version=${{ env.GitVersion_SemVer }} /p:SourceLinkCreate=true /p:PublicRelease=true
 
     - name: Publish project
-      run: dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+      run: dotnet publish -c Release /p:UseAppHost=false
 
   build-push-image:
     needs: setup-build-test
