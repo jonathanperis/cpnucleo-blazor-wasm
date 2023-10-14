@@ -7,18 +7,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN ls -s
-
-WORKDIR /app/wwwroot
-
-RUN ls -s
-
-WORKDIR /app/wwwroot/wwwroot
-
-RUN ls -s
-
 FROM nginx:alpine AS final
 
-WORKDIR /usr/share/nginx/html
+WORKDIR /user/share/nginx/html
 COPY --from=base /app/wwwroot .
 COPY nginx.conf /etc/nginx/nginx.conf
