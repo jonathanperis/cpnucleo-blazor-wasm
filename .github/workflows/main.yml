@@ -67,7 +67,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: cpnucleo-blazor-wasm-artifact
-        path: path/to/artifacts
+        path: publish
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3

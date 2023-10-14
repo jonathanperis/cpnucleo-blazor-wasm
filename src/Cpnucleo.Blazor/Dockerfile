@@ -33,7 +33,7 @@ WORKDIR "/src/src"
 
 RUN ls -s
 
-WORKDIR "/src/wwwroot"
+WORKDIR "/src/publish"
 
 RUN ls -s
 
