@@ -25,7 +25,7 @@ WORKDIR /src
 
 # RUN dotnet restore "src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj"
 
-# COPY . .
+COPY . .
 
 RUN ls -s
 
