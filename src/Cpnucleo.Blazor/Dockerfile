@@ -27,12 +27,14 @@ RUN dotnet restore "src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj"
 
 COPY . .
 
+RUN ls -s
+
 WORKDIR "/src/src/Cpnucleo.Blazor"
 
-RUN dotnet build "Cpnucleo.Blazor.csproj" -c Release -o /app/build
+# RUN dotnet build "Cpnucleo.Blazor.csproj" -c Release -o /app/build
 
-FROM build AS publish
-RUN dotnet publish "Cpnucleo.Blazor.csproj" -c Release -o /app/publish /p:UseAppHost=false
+# FROM build AS publish
+# RUN dotnet publish "Cpnucleo.Blazor.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 
