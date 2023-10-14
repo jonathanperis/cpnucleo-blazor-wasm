@@ -12,20 +12,28 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /src
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3.5 \
-    python3-pip \
-    && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     python3.5 \
+#     python3-pip \
+#     && \
+#     apt-get clean && \
+#     rm -rf /var/lib/apt/lists/*
 
-COPY ["src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj", "src/Cpnucleo.Blazor/"]
+# COPY ["src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj", "src/Cpnucleo.Blazor/"]
 
-RUN dotnet workload install wasm-tools
+# RUN dotnet workload install wasm-tools
 
-RUN dotnet restore "src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj"
+# RUN dotnet restore "src/Cpnucleo.Blazor/Cpnucleo.Blazor.csproj"
 
-COPY . .
+# COPY . .
+
+RUN ls -s
+
+WORKDIR "/src/src"
+
+RUN ls -s
+
+WORKDIR "/src/wwwroot"
 
 RUN ls -s
 
