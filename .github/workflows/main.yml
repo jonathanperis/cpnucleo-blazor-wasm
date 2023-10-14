@@ -86,7 +86,7 @@ jobs:
         context: .
         push: true
         file: ./src/Cpnucleo.Blazor/Dockerfile
-        tags: jonathanperis/cpnucleo-blazor:latest
+        tags: jonathanperis/cpnucleo-blazor-wasm:latest
 
   deploy-image-azure:
     runs-on: ubuntu-latest
@@ -97,6 +97,6 @@ jobs:
         id: deploy-image-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'cpnucleo-blazor'
+          app-name: 'cpnucleo-blazor-wasm'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE  }}
-          images: 'index.docker.io/jonathanperis/cpnucleo-blazor:latest'
+          images: 'index.docker.io/jonathanperis/cpnucleo-blazor-wasm:latest'

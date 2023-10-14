@@ -14,12 +14,7 @@ WORKDIR /src
 
 COPY . .
 
-WORKDIR /src/wwwroot
-
-RUN ls -s
-
 FROM base AS final
 
 WORKDIR /app
 COPY --from=build /src/wwwroot .
-# ENTRYPOINT ["dotnet", "Cpnucleo.Blazor.dll"]
