@@ -14,7 +14,8 @@ WORKDIR /src
 
 COPY . .
 
-FROM base AS final
+FROM nginx:alpine AS final
 
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 COPY --from=build /src/wwwroot .
+COPY nginx.conf /etc/nginx/nginx.conf
