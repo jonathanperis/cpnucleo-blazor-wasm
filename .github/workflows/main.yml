@@ -63,10 +63,11 @@ jobs:
       with:
         fetch-depth: 0
 
-    # - name: Download artifact
-    #   uses: actions/download-artifact@v2
-    #   with:
-    #     name: cpnucleo-blazor-wasm-artifact
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: cpnucleo-blazor-wasm-artifact
+        path: path/to/artifacts
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
