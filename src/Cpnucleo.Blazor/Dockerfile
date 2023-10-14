@@ -29,15 +29,15 @@ COPY . .
 
 RUN ls -s
 
-WORKDIR "/src/src/Cpnucleo.Blazor"
+# WORKDIR "/src/src/Cpnucleo.Blazor"
 
 # RUN dotnet build "Cpnucleo.Blazor.csproj" -c Release -o /app/build
 
 # FROM build AS publish
 # RUN dotnet publish "Cpnucleo.Blazor.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-FROM base AS final
+# FROM base AS final
 
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Cpnucleo.Blazor.dll"]
+# WORKDIR /app
+# COPY --from=publish /app/publish .
+# ENTRYPOINT ["dotnet", "Cpnucleo.Blazor.dll"]
